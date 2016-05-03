@@ -44,7 +44,7 @@ The links provided should be included as attachments in the repsonse that your b
 
 ```
 attachments.push({
-	"text": "Was this message helpful?  <"+data.helpfulLink+"|:thumbsup:>    <"+data.notHelpfulLink+"|:thumbsdown:>\nPowered By FeedBot"
+	"text": "Was this message helpful?  <"+data.helpfulLink+"|:thumbsup:>    <"+data.notHelpfulLink+"|:thumbsdown:>"
 });
 ```
 
@@ -90,7 +90,7 @@ function handleRoot(req, res) {
 
 			//attempt to add the FeedBot attachment, but degrade gracefully of course
 			if (!feedbotError) {
-				try { attachments.push({ "text": "Was this message helpful?  <"+JSON.parse(feedbotResponse.body).data.helpfulLink+"|:thumbsup:>    <"+JSON.parse(feedbotResponse.body).data.notHelpfulLink+"|:thumbsdown:>\nPowered By FeedBot" }); }
+				try { attachments.push({ "text": "Was this message helpful?  <"+JSON.parse(feedbotResponse.body).data.helpfulLink+"|:thumbsup:>    <"+JSON.parse(feedbotResponse.body).data.notHelpfulLink+"|:thumbsdown:>" }); }
 				catch (err) { attachments.push({ "text": JSON.stringify(feedbotResponse.body) }); }
 			}
 
