@@ -14,7 +14,7 @@ var needle = require('needle');
 function handleRoot(req, res) {
 	
 	//send a request to FeedBot in order to get your custom links
-	needle.post('http://api.getfeedbot.com', {
+	needle.post('https://api.getfeedbot.com', {
 			action		: 'getLinks',
 			apiKey		: <Your FeedBot API Key>,
 			secretKey	: <Your FeedBot Secret Key>,
