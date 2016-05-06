@@ -4,7 +4,7 @@ FeedBot is all about analyzing requests that are made to your bots and allowing 
 
 ## Step 1: Create An Account
 
-Head over to the [FeedBot Dashboard](http://dashboard.getfeedbot.com) and register for an account.  Then click "Add a bot" in the left panel and give the bot a name.  This will provide you with the API Key and Secret Key that you'll need next.
+Head over to the [FeedBot Dashboard](https://dashboard.getfeedbot.com) and register for an account.  Then click "Add a bot" in the left panel and give the bot a name.  This will provide you with the API Key and Secret Key that you'll need next.
 
 ## Step 2: Send Your Requests
 
@@ -12,7 +12,7 @@ Now that you have your API Key and Secret Key, you're ready to connect your bot 
 
 ##### API Endpoint
 ```
-POST http://api.getfeedbot.com
+POST https://api.getfeedbot.com
 ```
 
 ##### Request Parameters
@@ -32,8 +32,8 @@ FeedBot will return `errorCode`, `errorMessage`, and `data`.
 ```
 {
 	data: {
-		helpfulLink: "http://submit.getfeedbot.com/#d22a364cc800d233d950bebabdcf4a90",
-		notHelpfulLink:"http://submit.getfeedbot.com/#c69f4475234c2ad524a996de1bfe3d1d"
+		helpfulLink: "https://submit.getfeedbot.com/#d22a364cc800d233d950bebabdcf4a90",
+		notHelpfulLink:"https://submit.getfeedbot.com/#c69f4475234c2ad524a996de1bfe3d1d"
 	},
 	errorCode:"0",
 	errorMessage:"Success"
@@ -50,7 +50,7 @@ attachments.push({
 
 ## That's It!
 
-Users will now see the option to provide feedback when they ask your bot for information.  You can monitor their feedback by logging back into the [FeedBot Dashboard](http://dashboard.getfeedbot.com).
+Users will now see the option to provide feedback when they ask your bot for information.  You can monitor their feedback by logging back into the [FeedBot Dashboard](https://dashboard.getfeedbot.com).
 
 #Demos
 
@@ -75,7 +75,7 @@ var needle = require('needle');
 function handleRoot(req, res) {
 	
 	//send a request to FeedBot in order to get your custom links
-	needle.post('http://api.getfeedbot.com', {
+	needle.post('https://api.getfeedbot.com', {
 			action		: 'getLinks',
 			apiKey		: <Your FeedBot API Key>,
 			secretKey	: <Your FeedBot Secret Key>,
